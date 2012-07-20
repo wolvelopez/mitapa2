@@ -75,3 +75,13 @@ img{
 	width: 200px;
 	display: inline-block;
 }
+
+#nuevousuario input{
+ 	width: 100px;
+ 	border: 1px, solid;
+}
+#nuevousuario label{
+ 	width: 300px;
+ 	color: #547289;
+ 	
+}

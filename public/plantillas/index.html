@@ -15,8 +15,7 @@
 				<li><a href="/ingresar">Login</a></li>
 				<li><a href="/usuario/nuevo">Date de alta</a></li>				
 				<li><a href="/tapas">Tapas</a></li>
-				<li><a href="/localizacion">Localizacion</a></li>
-				<li><a href="/comentarios">Comentarios</a></li>
+				<li><a href="/localizacion">Localizacion</a></li>				
 				<li><a href="/altatapa">Añade una Tapa</a></li>
 				<li><a href="/cerrar">Salir</a></li>
 			</ul>
@@ -24,17 +23,19 @@
 	</header>
 	<div id="contenedor">
 		<section class="contenido">	
-			{% block contenido %}
-			{% endblock %}
-			{% block comentarios %}
-			{% endblock %}
 			<article>
-			{% block aleatorias %}
-			{% endblock %}
+				{% block contenido %}
+				{% endblock %}
+				{% block comentarios %}
+				{% endblock %}
+			</article>
+			<article>
+				{% block aleatorias %}
+				{% endblock %}
 			</article>
 		</section>		
 		<footer class="contenido">			
-			<p>+++++++     MiTapa 2012 - CopyLeft     ++++++</p>
+			<p>     MiTapa 2012 - CopyLeft     </p>
 		</footer>
 	</div>
 </body>

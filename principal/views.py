@@ -3,13 +3,14 @@ from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, get_object_or_404
-from principal.forms import AltaTapaForm, AltaComentarioForm, AltaLugarForm
+from principal.forms import AltaTapaForm, AltaComentarioForm, AltaLugarForm, RegisterForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+
 import random
 
 
@@ -18,11 +19,6 @@ import random
 def tapas(request):
 	tapas = Tapa.objects.all()
 	return render_to_response('tapas.html',{'tapas':tapas}, context_instance=RequestContext(request))
-
-@login_required(login_url='/ingresar')
-def comentarios_tapas(request):
-	comen = Comentario.objects.all()
-	return render_to_response('comentarios.html', {'comen':comen})
 
 @login_required(login_url='/ingresar')
 def detalle_tapa(request, id_tapa):	
@@ -121,6 +117,17 @@ def inicio(request):
 	return render_to_response('inicio.html',{'aleatoriaselegidas':aleatoriaselegidas},context_instance=RequestContext(request))
 
 
+def usuarioNuevo(request):    
+    if request.method == 'POST':
+        usuario = RegisterForm(request.POST)
+        if usuario.is_valid():
+            usuario.save() 
+            HttpResponseRedirect('/ingresar')
+    else:
+        usuario = RegisterForm()
+    return render_to_response('usuarionuevo.html', {'usuario':usuario}, context_instance=RequestContext(request))
+
+       
 
 
 

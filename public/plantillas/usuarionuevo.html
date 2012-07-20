@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block titulo %}Alta de Usuario{% endblock %}
+
+{%block contenido %}
+	<div id="nuevousuario">
+		<form id="usuario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+			{{usuario.as_ul}}		
+			<p><input type="submit" value="Confirmar"></p>
+		</form>
+	</div>
+{% endblock %}
