@@ -128,7 +128,7 @@ def usuarioNuevo(request):
     return render_to_response('usuarionuevo.html', {'usuario':usuario}, context_instance=RequestContext(request))
 
        
-
+#prueba de git
 
 
 
