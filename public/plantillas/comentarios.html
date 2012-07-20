@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+
+{% block contenido %}
+	{% for item in comen %}
+		<p>{{item.comentarios}}</p>
+	{% endfor %}
+{% endblock %}

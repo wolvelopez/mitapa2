@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>{%block titulo%}{% endblock %}</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/estilo.css">
+	<link rel="shortcut icon" href="{{STATIC_URL}}img/icono.png">
+	{% block estilo %}{% endblock %}
+</head>
+<body>
+	<header>
+		<nav id="menu_navegacion">
+			<ul>
+				<li><a href="/"><img src="{{STATIC_URL}}img/mitapa.gif"></a></li>
+				<li><a href="/ingresar">Login</a></li>
+				<li><a href="/usuario/nuevo">Date de alta</a></li>				
+				<li><a href="/tapas">Tapas</a></li>
+				<li><a href="/localizacion">Localizacion</a></li>
+				<li><a href="/comentarios">Comentarios</a></li>
+				<li><a href="/altatapa">Añade una Tapa</a></li>
+				<li><a href="/cerrar">Salir</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="contenedor">
+		<section class="contenido">	
+			{% block contenido %}
+			{% endblock %}
+			{% block comentarios %}
+			{% endblock %}
+			<article>
+			{% block aleatorias %}
+			{% endblock %}
+			</article>
+		</section>		
+		<footer class="contenido">			
+			<p>+++++++     MiTapa 2012 - CopyLeft     ++++++</p>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block titulo %}Algunas tapas de diferentes lugares{% endblock %}
+{% block aleatorias %}
+	<h1>Algunas de las últimas tapas...</h1>
+	{% for tapa in aleatoriaselegidas %}
+		<div id="aleatorias">
+		    <p>{{tapa.nombre}}</p>
+		    <p><img src="{{MEDIA_URL}}{{tapa.imagen}}"/></p>
+		    <p>{{tapa.lugar}}</p>
+	    </div>	    	
+	{% endfor %}
+	<div id="registrate">
+		Registrate!!!
+	</div>
+{% endblock %}

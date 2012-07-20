@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block estilo %}
+
+{% endblock %}
+
+{% block contenido %}
+	<h1>Tapas registradas</h1>
+	<div id="tapas">
+		{% for item in tapas %}
+			<div id="tapas2">
+				<p><a href='{% url principal.views.detalle_tapa item.id %}'>{{item.nombre}}</a></p>
+				<p>{{item.nombre}}</p>
+				<p>{{item.lugar}}</p>
+				<p><img src='{{MEDIA_URL}}{{item.imagen}}'></p>
+				<p>{{item.usuario}}</p>
+				<p><a href='{% url principal.views.comentar_tapa item.id %}'>Coméntala</a></p>
+			</div>
+		{% empty %}
+			<p>No hay tapas registradas aun.</p>
+		{% endfor %}
+		<!-- BLoque de tapas aleatorias -->
+		{%block aleatorias %}{% endblock %}
+	</div>	
+{% endblock %}

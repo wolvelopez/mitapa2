@@ -1,0 +1,29 @@
+{% extends 'index.html'%}
+
+{% block estilo %}
+<style>
+	img{
+		width: 150px;
+		height: 150px;
+	}
+	#comentarios{
+		width:350px;
+		display: block;
+	}
+</style>
+{% endblock %}
+
+{% block contenido %}
+	{{dato.nombre}}
+	<p><img src="{{MEDIA_URL}}{{dato.imagen}}"></p>
+	{% for com in comments %}
+		<div id="comentarios">
+			<p>{{com.comentarios}} by {{com.usuario}}</p>
+			<p></p>					
+		</div>
+	{% empty %}
+		<p>No existen comentarios aún.</p>
+	{% endfor %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

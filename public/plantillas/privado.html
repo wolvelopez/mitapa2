@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+	Bienvenido
+{% endblock %}
+
+{% block encabezado %}
+	<h1>Bienvenido</h1>	
+{% endblock %}
+
+{% block contenido %}
+	<p>Bienvenido {{usuario.username|upper}}</p>
+	<p>La última vez que entro fué {{usuario.last_login}}</p>
+	<p>Miembro desde {{usuario.date_joined}}</p>
+{% endblock%}

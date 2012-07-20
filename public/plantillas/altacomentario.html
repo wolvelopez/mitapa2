@@ -1,0 +1,19 @@
+{% extends 'tapa.html' %}
+
+{% block contenido %}
+	{{dato.nombre}}
+	<p><img src="{{MEDIA_URL}}{{dato.imagen}}"></p>
+	{% for com in comments %}
+		<div id="comentarios">
+			<p>{{com.comentarios}} - {{com.usuario}}</p>		
+		</div>
+	{% empty %}
+		<p>No existen comentarios aun.</p>
+	{% endfor %}
+{% endblock %}
+{% block comentarios%}
+	<form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+		{{formulario.as_p}}
+		<p><input type="submit" value="Comenta!!"></p>				
+	</form>
+{% endblock %}
