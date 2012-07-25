@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 from principal.models import Lugar, Tapa, Comentario
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,6 +12,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 
+from xml.dom import minidom
+import urllib
 import random
 
 
@@ -105,8 +108,6 @@ def cerrar(request):
 
 
 #funcion para mostrar tapas aleatorias de todos los lugares del mundo
-
-
 def inicio(request):
 	tapas = Tapa.objects.all()
 	aleatoriaselegidas = []
@@ -128,10 +129,33 @@ def usuarioNuevo(request):
     return render_to_response('usuarionuevo.html', {'usuario':usuario}, context_instance=RequestContext(request))
 
        
-#prueba de git
+def localizarlugares(request):
+    return render_to_response('lugares.html')
+
+def obtenerPosicion(request):
+    if request.method == 'POST':
+        localizacion = request.POST['ubicacion'] 
+        #Distancia desde el lugar que te encuentras
+        distancia_lugar = '80000'
+        #lugares que buscarmos
+        lugar = 'bar|cafeteria|comida|club nocturno|restaurante'
+        #obtenemos los lugares cercanos con un XML del API de Google Maps     
+        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+        print lugares
+        xmldoc = minidom.parse(urllib.urlopen(lugares))
+        local = []
+        for item in xmldoc.getElementsByTagName("result"): 
+            for item in item.getElementsByTagName('name'):
+                local.append([item.firstChild.data])
+                print item.firstChild.data
+        return render_to_response('lugarescercanos.html', {'local':local})
+    else:
+        return render_to_response('obtenerposicion.html', context_instance=RequestContext(request))
 
 
 
+#https://maps.googleapis.com/maps/api/place/search/xml?location=39.16276,-3.028257&radius=1000&types=bar&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
+#key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 
 
 

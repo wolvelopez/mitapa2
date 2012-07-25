@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block estilo %}
+
+{% endblock %}
+
+{% block contenido %}
+	<h1>Lugares Cercanos</h1>
+	<div id="tapas">
+		{% for item in local %}
+			<div id="tapas2">				
+				<p>{{ item }}</p>		
+			</div>
+		{% empty %}
+			<p>No hay lugares cercanos.</p>
+		{% endfor %}		
+	</div>	
+{% endblock %}

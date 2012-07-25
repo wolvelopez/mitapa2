@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title></title>
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js?ver=3.1.2'></script>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&sensor=false"></script>
+		<script type="text/javascript">
+			window.onload = obtenerUbicacion;
+
+			function obtenerUbicacion() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+				} else {
+					alert("Error! El navegador no soporta Geolocalizacion.");
+				}
+			}
+
+			function mostrarUbicacion(position) {
+				var latitud = position.coords.latitude;
+				var longitud = position.coords.longitude;
+				
+				var div = document.getElementById("ubicacion");
+
+				div.innerHTML = "Tu estas en: Latitud: " + latitud + ", Longitud: " + longitud;
+				document.forms['formulario']['ubicacion'].value = latitud + "," + longitud;	
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id='ubicacion'></div>
+		<form id='formulario' method="POST">{% csrf_token %}
+			<input type="text" id="ubicacion" name="ubicacion" size=50/>
+			<input type="submit" valur="confirmar" /> 
+		</form>
+	<body>
+</html>
