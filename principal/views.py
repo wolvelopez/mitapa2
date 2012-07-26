@@ -136,11 +136,11 @@ def obtenerPosicion(request):
     if request.method == 'POST':
         localizacion = request.POST['ubicacion'] 
         #Distancia desde el lugar que te encuentras
-        distancia_lugar = '500'
+        distancia_lugar = '80000'
         #lugares que buscarmos
         lugar = 'bar|cafeteria|comida|club nocturno|restaurante'
         #obtenemos los lugares cercanos con un XML del API de Google Maps     
-        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
         print lugares
         xmldoc = minidom.parse(urllib.urlopen(lugares))
         local = []       
