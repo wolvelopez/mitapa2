@@ -136,24 +136,23 @@ def obtenerPosicion(request):
     if request.method == 'POST':
         localizacion = request.POST['ubicacion'] 
         #Distancia desde el lugar que te encuentras
-        distancia_lugar = '80000'
+        distancia_lugar = '500'
         #lugares que buscarmos
         lugar = 'bar|cafeteria|comida|club nocturno|restaurante'
         #obtenemos los lugares cercanos con un XML del API de Google Maps     
         lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
         print lugares
         xmldoc = minidom.parse(urllib.urlopen(lugares))
-        local = []
+        local = []       
         for item in xmldoc.getElementsByTagName("result"): 
-            for item in item.getElementsByTagName('name'):
-                local.append([item.firstChild.data])
-                print item.firstChild.data
-        return render_to_response('lugarescercanos.html', {'local':local})
+            for item in item.getElementsByTagName('name'):                
+                local.append([item.firstChild.data])                           
+        return render_to_response('lugarescercanos.html', {'local':local}, context_instance=RequestContext(request))
     else:
         return render_to_response('obtenerposicion.html', context_instance=RequestContext(request))
 
 
-##yeha
+
 #https://maps.googleapis.com/maps/api/place/search/xml?location=39.16276,-3.028257&radius=1000&types=bar&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 

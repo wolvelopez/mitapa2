@@ -85,3 +85,15 @@ img{
  	color: #547289;
  	
 }
+
+#lugarescercanos2 {
+	display: inline-table;
+	width: 100px;
+	height: 50px;
+	padding: 10px 5px 10px 5px;
+	border: 1px solid;
+	font-size: small;
+}
+#lugarescercanos2:hover{
+	color: #568209;
+}
