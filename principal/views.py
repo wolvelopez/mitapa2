@@ -153,7 +153,7 @@ def obtenerPosicion(request):
         return render_to_response('obtenerposicion.html', context_instance=RequestContext(request))
 
 
-
+##yeha
 #https://maps.googleapis.com/maps/api/place/search/xml?location=39.16276,-3.028257&radius=1000&types=bar&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 
