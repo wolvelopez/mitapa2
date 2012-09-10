@@ -1,13 +1,14 @@
 #menu_navegacion{
 	width: 60%;
-	max-width: 1100px;	
+	max-width: 1100px;
+	font-size: xx-small;	
 	margin: 10px auto;
 }
 
 #menu_navegacion ul li{
 	display: inline;
 	padding: 10px 5px 10px 5px;
-	list-style: none;
+	list-style: none;	
 	visited: none;
 }
 #menu_navegacion a:link{

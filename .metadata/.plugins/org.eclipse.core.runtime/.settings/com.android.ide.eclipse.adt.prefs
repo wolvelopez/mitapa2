@@ -1,0 +1,4 @@
+#Sat Sep 08 11:28:10 CEST 2012
+com.android.ide.eclipse.adt.sdk=/opt/android-sdk-linux
+eclipse.preferences.version=1
+com.android.ide.eclipse.adt.fixLegacyEditors=1

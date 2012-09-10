@@ -4,18 +4,19 @@ from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, get_object_or_404
-from principal.forms import AltaTapaForm, AltaComentarioForm, AltaLugarForm, RegisterForm
+from principal.forms import AltaTapaForm, AltaComentarioForm, AltaLugarForm, RegisterForm, LugarNuevo, lugaresCercanos
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-
+import urllib2
+import requests
 from xml.dom import minidom
 import urllib
 import random
-
+from googlemaps import GoogleMaps
 
 
 @login_required(login_url='/ingresar')
@@ -132,29 +133,78 @@ def usuarioNuevo(request):
 def localizarlugares(request):
     return render_to_response('lugares.html')
 
+
 def obtenerPosicion(request):
     if request.method == 'POST':
         localizacion = request.POST['ubicacion'] 
         #Distancia desde el lugar que te encuentras
-        distancia_lugar = '80000'
+        distancia_lugar = '1000'
         #lugares que buscarmos
-        lugar = 'bar|cafeteria|comida|club nocturno|restaurante'
+        lugar = 'bar|cafeteria|comida|restaurante'
         #obtenemos los lugares cercanos con un XML del API de Google Maps     
-        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + localizacion + '&radius=' + distancia_lugar + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'        
         print lugares
         xmldoc = minidom.parse(urllib.urlopen(lugares))
         local = []       
         for item in xmldoc.getElementsByTagName("result"): 
-            for item in item.getElementsByTagName('name'):                
-                local.append([item.firstChild.data])                           
+            for item in item.getElementsByTagName('name'):                                
+                local.append(item.firstChild.data)                                           
         return render_to_response('lugarescercanos.html', {'local':local}, context_instance=RequestContext(request))
     else:
         return render_to_response('obtenerposicion.html', context_instance=RequestContext(request))
 
+def lugarnuevo(request):
+    if request.method == 'POST':
+        formulario = LugarNuevo(request.POST)
+        if formulario.is_valid():
+            xml = "<PlaceAddRequest>" + "<location>" + "<lat>" + request.POST['latitud'] + \
+                "</lat>" + "<lng>" + request.POST['longitud'] + "</lng>" + "</location>" + \
+                "<accuracy>" + "5" + "</accuracy>" + \
+                "<name>" + request.POST['nombre'] + "</name>" + \
+                "<type>" + request.POST['tipo'] + "</type>" + \
+                "<language>" + "es" + "</language>" + \
+                "</PlaceAddRequest>"
+            print xml
+            #utilizamos request, una libreria mas optimizada que urllib2            
+            r = requests.post('https://maps.googleapis.com/maps/api/place/add/xml?sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A',xml)
+            print r.content
+    else:
+        formulario = LugarNuevo()
+    return render_to_response('lugarnuevo.html', {'formulario':formulario}, context_instance=RequestContext(request))
+
+def obtpos(request):
+    gmaps = GoogleMaps('AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A')    
+    #Distancia desde el lugar que te encuentras
+    radio = '1000'
+    #lugares que buscarmos
+    lugar = 'bar|cafeteria|comida|restaurante' 
+    if request.method == 'POST':        
+        formulario = lugaresCercanos(request.POST)
+        if formulario.is_valid:
+            direccion = request.POST['direccion']
+            radio = request.POST['radio_distancia']
+            #utilizamos la libreria de google maps
+            lat, lng = gmaps.address_to_latlng(direccion)
+            lat = str(lat)
+            lng = str(lng)
+            print lat
+            print lng
+            lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + lat + ',' + lng + '&radius=' + radio + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+            print lugares
+            xmldoc = minidom.parse(urllib.urlopen(lugares))
+            local = [] 
+            for item in xmldoc.getElementsByTagName("result"): 
+                for item in item.getElementsByTagName('name'):                                
+                    local.append(item.firstChild.data)                                           
+        return render_to_response('lugarescercanos.html', {'local':local}, context_instance=RequestContext(request))
+    else:
+        formulario = lugaresCercanos()
+        return render_to_response('direccion.html', {'formulario':formulario}, context_instance=RequestContext(request))
 
 
 #https://maps.googleapis.com/maps/api/place/search/xml?location=39.16276,-3.028257&radius=1000&types=bar&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
+
 
 
 

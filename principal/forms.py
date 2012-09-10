@@ -31,3 +31,16 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ("firstname", "lastname", "email", "username", )
 
+class LugarNuevo(forms.Form):
+	latitud = forms.CharField(label="Latitud")
+	longitud = forms.CharField(label="Longitud")
+	precision = forms.CharField(label="Precision")
+	nombre = forms.CharField(label="Nombre")
+	tipo = forms.CharField(label="Tipo")
+	lenguaje = forms.CharField(label="lenguaje")
+
+class lugaresCercanos(forms.Form):
+	direccion = forms.CharField(label="Direccion")
+	radio_distancia = forms.CharField(label="Radio")
+
+	

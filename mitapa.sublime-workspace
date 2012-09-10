@@ -1,0 +1,806 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lugares",
+				"lugaresCercanos	(imported, instance)"
+			],
+			[
+				"P",
+				"POST"
+			],
+			[
+				"Lugares",
+				"lugarescercanos"
+			],
+			[
+				"reque",
+				"request	(local, instance)"
+			],
+			[
+				"Requ",
+				"request"
+			],
+			[
+				"ur",
+				"urllib2	(imported, module)"
+			],
+			[
+				"htt",
+				"HttpResponseRedirect"
+			],
+			[
+				"form",
+				"formulario"
+			],
+			[
+				"Lu",
+				"LugarNuevo	(imported, instance)"
+			],
+			[
+				"Model",
+				"ModelForm	ModelForm"
+			],
+			[
+				"ge",
+				"getElementsByTagName"
+			],
+			[
+				"fi",
+				"firstChild"
+			],
+			[
+				"col",
+				"background-color"
+			],
+			[
+				"get",
+				"getAttribute"
+			],
+			[
+				"xml",
+				"xmldoc	(local, instance)"
+			],
+			[
+				"respon",
+				"render_to_response	(imported, instance)"
+			],
+			[
+				"obte",
+				"obtenerLugaresCercanos	(global, function)"
+			],
+			[
+				"Htt",
+				"HttpResponseRedirect	(imported, instance)"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"co",
+				"coords"
+			],
+			[
+				"ren",
+				"render_to_response	(imported, instance)"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"User",
+				"UserCreationForm	(imported, instance)"
+			],
+			[
+				"http",
+				"HttpResponseRedirect"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"me",
+				"method"
+			],
+			[
+				"req",
+				"request	(local, instance)"
+			],
+			[
+				"ar",
+				"article	Tag"
+			],
+			[
+				"des",
+				"description_short	(local, instance)"
+			],
+			[
+				"descrip",
+				"description_short	(local, instance)"
+			],
+			[
+				"s",
+				"split	(builtin, function)"
+			],
+			[
+				"descr",
+				"description	(local, instance)"
+			],
+			[
+				"descri",
+				"description_short"
+			],
+			[
+				"rene",
+				"render_to_response	(imported, instance)"
+			],
+			[
+				"com",
+				"comentar_tapa	(global, function)"
+			],
+			[
+				"background",
+				"background	background-color: hex"
+			],
+			[
+				"p",
+				"principal"
+			],
+			[
+				"Al",
+				"AltaUsuarioForm"
+			],
+			[
+				"ht",
+				"HttpResponseRedirect"
+			],
+			[
+				"Alta",
+				"AltaUsuarioForm"
+			],
+			[
+				"border",
+				"border	border-right: size style color"
+			],
+			[
+				"bo",
+				"border	border-right-color: color"
+			],
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"res",
+				"RequestContext"
+			],
+			[
+				"rener",
+				"HttpResponseRedirect"
+			],
+			[
+				"fo",
+				"ForeignKey"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"ta",
+				"tapas2"
+			],
+			[
+				"conte",
+				"context_instance"
+			],
+			[
+				"Comen",
+				"ComentarioForm"
+			],
+			[
+				"HttpR",
+				"HttpResponseRedirect"
+			],
+			[
+				"Come",
+				"ComentarioForm"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"Com",
+				"ContactoForm"
+			],
+			[
+				"Receta",
+				"RecetaForm"
+			],
+			[
+				"formulario",
+				"formulario-cleaned_data"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"con",
+				"context_instance"
+			],
+			[
+				"li",
+				"lista_recetas"
+			],
+			[
+				"Re",
+				"RequestContext"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"ce",
+				"cellpadding"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"sistemaurgencias_",
+				"sistemaurgencias_3_repeat"
+			],
+			[
+				"t",
+				"tiempo"
+			],
+			[
+				"f",
+				"fecha"
+			],
+			[
+				"vi",
+				"views"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "mitapa/urls.py",
+			"settings":
+			{
+				"buffer_size": 1519,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/plantillas/altatapa.html",
+			"settings":
+			{
+				"buffer_size": 276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/plantillas/direccion.html",
+			"settings":
+			{
+				"buffer_size": 337,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "principal/views.py",
+			"settings":
+			{
+				"buffer_size": 9509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "principal/forms.py",
+			"settings":
+			{
+				"buffer_size": 1382,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/plantillas/ingresar.html",
+			"settings":
+			{
+				"buffer_size": 316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/plantillas/lugarescercanos.html",
+			"settings":
+			{
+				"buffer_size": 327,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/plantillas/index.html",
+			"settings":
+			{
+				"buffer_size": 1330,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control:ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/wolvelopez/mitapa/public/plantillas/lugarnuevo.html",
+		"/home/wolvelopez/mitapa/public/plantillas/obtenerposicion.html",
+		"/home/wolvelopez/mitapa/principal/forms.py",
+		"/home/wolvelopez/mitapa/mitapa/settings.py",
+		"/home/wolvelopez/mitapa/public/static/css/estilo.css",
+		"/home/wolvelopez/mitapa/public/plantillas/index.html",
+		"/home/wolvelopez/mitapa/public/plantillas/tapas.html",
+		"/home/wolvelopez/mitapa/public/plantillas/lugarescercanos.html",
+		"/home/wolvelopez/mitapa/principal/views.py",
+		"/home/wolvelopez/Programacion/sexshop/proovedorespy/productos_xml_sin_dvd.xml",
+		"/home/wolvelopez/.config/sublime-text-2/Packages/User/HTML (Django).sublime-settings",
+		"/home/wolvelopez/mitapa/public/plantillas/lugares.html",
+		"/home/wolvelopez/mitapa/public/plantillas/localizacion.html",
+		"/home/wolvelopez/Programacion/sexshop/proovedorespy/**COPIA DE LA BBDD DE LOS PECADOS DE LOLA**",
+		"/home/wolvelopez/Programacion/mitapa/mitapa/principal/tests.py",
+		"/home/wolvelopez/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/wolvelopez/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/wolvelopez/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/wolvelopez/.config/sublime-text-2/Packages/User/Python.sublime-settings",
+		"/home/wolvelopez/Escritorio/sexshop/proovedorespy/conexion.py",
+		"/home/wolvelopez/Escritorio/sexshop/proovedorespy/productos_xml_sin_dvd.xml",
+		"/home/wolvelopez/Escritorio/sexshop/proovedorespy/info.py",
+		"/home/wolvelopez/Escritorio/sexshop/proovedorespy/guardarImagen.py",
+		"/home/wolvelopez/Escritorio/sexshop/proovedorespy/obtenerFichero.py",
+		"/home/wolvelopez/Cajon Desastre/guardarImagen.py",
+		"/home/wolvelopez/Programacion/mitapa/principal/models.py",
+		"/home/wolvelopez/Programacion/proovedorespy/conexion.py",
+		"/home/wolvelopez/Escritorio/google_appengine/README",
+		"/home/wolvelopez/Programacion/proovedorespy/guardarImagen.py",
+		"/home/wolvelopez/Programacion/mitapa/principal/tests.py",
+		"/home/wolvelopez/Programacion/mitapa/mitapa/plantillas/usuarios.html",
+		"/home/wolvelopez/Programacion/mitapa/mitapa/plantillas/localizacion.html",
+		"/home/wolvelopez/Programacion/mitapa/principal/forms.py",
+		"/home/wolvelopez/Programacion/mitapa/principal/admin.py",
+		"/home/wolvelopez/Programacion/mitapa/mitapa/settings.py",
+		"/media/ANDRES/Andres/pegar.txt",
+		"/home/wolvelopez/.gvfs/compartida a todos en nas/Quetius/profesionales.grutinet.com micuenta datos_exportacion productos_xml_sin_dvd.xml",
+		"/home/wolvelopez/Programacion/mitapa/mitapa/plantillas/tapas.html",
+		"/home/wolvelopez/Programacion/mitapa/principal/views.py",
+		"/home/wolvelopez/Programacion/mitapa/README.md",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/lista_recetas.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/plantilla.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/base.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/inicio.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/usuario.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/plantillas/recetas.html",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/recetario/settings.py",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/principal/views.py",
+		"/home/wolvelopez/Dropbox/Sofware personal/recetario/principal/base.html",
+		"/home/wolvelopez/Documentos/PCInnova/Paginas Web PCInnova/grupo4publicidad",
+		"/home/wolvelopez/Cajon Desastre/estilo.css",
+		"/home/wolvelopez/Cajon Desastre/default.php",
+		"/home/wolvelopez/Cajon Desastre/wolvelopezhtml.php",
+		"/home/wolvelopez/Cajon Desastre/templateUrgencias.html",
+		"/home/wolvelopez/Cajon Desastre/templateUrgencias.php",
+		"/home/wolvelopez/Cajon Desastre/jquery.neosmart.fb.wall.js",
+		"/home/wolvelopez/Cajon Desastre/mod_login.php",
+		"/home/wolvelopez/Cajon Desastre/index.html",
+		"/home/wolvelopez/Cajon Desastre/joomla.php",
+		"/home/wolvelopez/Cajon Desastre/email.php",
+		"/home/wolvelopez/Programacion/libros/libros/libros/views.py",
+		"/home/wolvelopez/Programacion/libros/libros/libros/urls.py",
+		"/home/wolvelopez/Cajon Desastre/index.php",
+		"/home/wolvelopez/Cajon Desastre/template.css",
+		"/home/wolvelopez/Cajon Desastre/Casa del Comendador",
+		"/home/wolvelopez/Cajon Desastre/brezzings/THEMES_INSTALL_README.txt",
+		"/home/wolvelopez/Programacion/libros/libros/libros/settings.py",
+		"/home/wolvelopez/Programacion/libros/libros/libros/settings.pyc",
+		"/home/wolvelopez/Programacion/libros/libros/views.py",
+		"/home/wolvelopez/Cajon Desastre/carritogoloso/Descripción.txt",
+		"/home/wolvelopez/Cajon Desastre/HGM-Hudnet/README",
+		"/home/wolvelopez/Cajon Desastre/DesktopGarbin/Conky1",
+		"/home/wolvelopez/Cajon Desastre/minimal conky/READEme",
+		"/home/wolvelopez/Cajon Desastre/minimal conky/ori",
+		"/home/wolvelopez/Cajon Desastre/bars conky/rc"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"columpio",
+			"ref='20012'",
+			"20012",
+			"mapa_content",
+			"margen",
+			"*.py",
+			"productos",
+			"prestashop",
+			"))",
+			"beforehead123",
+			"module-lb",
+			"module-rt",
+			"module-rb",
+			"module-lt",
+			"beforehead123",
+			"beforehead2",
+			"before",
+			"nviar",
+			"round",
+			"lvround",
+			"'   |    '",
+			"','",
+			", ",
+			",",
+			"hidelabeltxt",
+			"filters",
+			"fieldset",
+			"pix"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"','",
+			"'   |    '"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "mitapa/urls.py",
+					"settings":
+					{
+						"buffer_size": 1519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1519,
+								1519
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/plantillas/altatapa.html",
+					"settings":
+					{
+						"buffer_size": 276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/plantillas/direccion.html",
+					"settings":
+					{
+						"buffer_size": 337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "principal/views.py",
+					"settings":
+					{
+						"buffer_size": 9509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								763,
+								763
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "principal/forms.py",
+					"settings":
+					{
+						"buffer_size": 1382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1376,
+								1376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 306.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/plantillas/ingresar.html",
+					"settings":
+					{
+						"buffer_size": 316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/plantillas/lugarescercanos.html",
+					"settings":
+					{
+						"buffer_size": 327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/plantillas/index.html",
+					"settings":
+					{
+						"buffer_size": 1330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								619,
+								619
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"infowork.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true
+}

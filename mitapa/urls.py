@@ -29,5 +29,7 @@ urlpatterns = patterns('',
     url(r'^cerrar/$', 'principal.views.cerrar'),
     url(r'^usuario/nuevo/$', 'principal.views.usuarioNuevo'),
     url(r'^lugares/$','principal.views.localizarlugares'),
-    url(r'^obtenerposicion/$', 'principal.views.obtenerPosicion'),        
+    url(r'^obtenerposicion/$', 'principal.views.obtenerPosicion'),
+    url(r'^lugarnuevo/$', 'principal.views.lugarnuevo'),
+    url(r'^obtpos/$', 'principal.views.obtpos'),        
 )

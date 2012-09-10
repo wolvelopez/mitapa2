@@ -1,0 +1,35 @@
+<html>
+<head>
+	<script type="text/javascript">
+		window.onload = obtenerUbicacion;
+
+		function obtenerUbicacion() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+			} else {
+				alert("Error! El navegador no soporta Geolocalizacion.");
+			}
+		}
+
+		function mostrarUbicacion(position) {
+			var latitud = position.coords.latitude;
+			var longitud = position.coords.longitude;
+			
+			document.forms['formulario']['latitud'].value = latitud;
+			document.forms['formulario']['longitud'].value = longitud;
+		}
+	</script>
+</head>
+<body>
+
+
+{% block contenido %}
+	<h1>Añade un nuevo lugar</h1>
+	
+	<form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}		
+		{{formulario.as_p}}		
+		<p><input type="submit" value="Confirmar"></p>
+	</form>		
+{% endblock %}
+</body>
+</html>
