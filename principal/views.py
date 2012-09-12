@@ -17,6 +17,11 @@ from xml.dom import minidom
 import urllib
 import random
 from googlemaps import GoogleMaps
+import sys
+
+#Añadimos al path de python lo modulos que se encuentran en la carpeta modules de alwaysdata
+#para mas informacion mirar en: http://wiki.alwaysdata.com/wiki/Instalar_un_m%C3%B3dulo_en_Python_(Es)
+sys.path.append('~/modules')
 
 
 @login_required(login_url='/ingresar')
