@@ -34,13 +34,14 @@ class RegisterForm(UserCreationForm):
 class LugarNuevo(forms.Form):
 	latitud = forms.CharField(label="Latitud")
 	longitud = forms.CharField(label="Longitud")
-	precision = forms.CharField(label="Precision")
+	precision = forms.CharField(label="Precision",widget=forms.HiddenInput())
 	nombre = forms.CharField(label="Nombre")
-	tipo = forms.CharField(label="Tipo")
-	lenguaje = forms.CharField(label="lenguaje")
+	tipo = forms.CharField(label="Tipo", widget=forms.HiddenInput())
+	lenguaje = forms.CharField(label="lenguaje",widget=forms.HiddenInput())
 
 class lugaresCercanos(forms.Form):
-	direccion = forms.CharField(label="Direccion")
-	radio_distancia = forms.CharField(label="Radio")
+	direccion = forms.CharField(label="Direccion", required=True)
+	poblacion = forms.CharField(label="Poblacion", required=True)
+	radio_distancia = forms.CharField(label="Radio", required=True)
 
 	

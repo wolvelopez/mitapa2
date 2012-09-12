@@ -166,7 +166,7 @@ def lugarnuevo(request):
                 "</lat>" + "<lng>" + request.POST['longitud'] + "</lng>" + "</location>" + \
                 "<accuracy>" + "5" + "</accuracy>" + \
                 "<name>" + request.POST['nombre'] + "</name>" + \
-                "<type>" + request.POST['tipo'] + "</type>" + \
+                "<type>" + "bar" + "</type>" + \
                 "<language>" + "es" + "</language>" + \
                 "</PlaceAddRequest>"
             print xml
@@ -187,6 +187,9 @@ def obtpos(request):
         formulario = lugaresCercanos(request.POST)
         if formulario.is_valid:
             direccion = request.POST['direccion']
+            poblacion = request.POST['poblacion']
+            direccion = direccion + ',' + poblacion
+            print direccion
             radio = request.POST['radio_distancia']
             #utilizamos la libreria de google maps
             lat, lng = gmaps.address_to_latlng(direccion)
