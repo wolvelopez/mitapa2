@@ -181,7 +181,7 @@ def obtpos(request):
     gmaps = GoogleMaps('AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A')    
     #Distancia desde el lugar que te encuentras
     radio = '1000'
-    #lugares que buscarmos
+    #lugares que buscamos
     lugar = 'bar|cafeteria|comida|restaurante' 
     if request.method == 'POST':        
         formulario = lugaresCercanos(request.POST)
@@ -200,15 +200,58 @@ def obtpos(request):
             lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + lat + ',' + lng + '&radius=' + radio + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
             print lugares
             xmldoc = minidom.parse(urllib.urlopen(lugares))
-            local = [] 
+            local = []
+            ref = []
+            datos = [] 
+            i = 0
             for item in xmldoc.getElementsByTagName("result"): 
-                for item in item.getElementsByTagName('name'):                                
-                    local.append(item.firstChild.data)                                           
-        return render_to_response('lugarescercanos.html', {'local':local}, context_instance=RequestContext(request))
+                for item in item.getElementsByTagName('name'):                	                                
+                    local.append(item.firstChild.data)
+                for item in xmldoc.getElementsByTagName("reference"):
+					ref.append(item.firstChild.data)
+					
+    		#vamos a meter las listas en un diccionario para facilitar la union en el template
+    		for i in range(0,len(local)):
+    			datos.append({'local':local[i],'ref':ref[i]})
+			                                     
+        return render_to_response('lugarescercanos.html', {'datos': datos}, context_instance=RequestContext(request))
     else:
         formulario = lugaresCercanos()
         return render_to_response('direccion.html', {'formulario':formulario}, context_instance=RequestContext(request))
 
+def nuevaTapaPosicion(request):
+	dato = get_object_or_404()
+	#Lo primero es elegir el local de donde es la tapa
+	gmaps = GoogleMaps('AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A')    
+    #Distancia desde el lugar que te encuentras
+	radio = '1000'
+    #lugares que buscamos
+	lugar = 'bar|cafeteria|comida|restaurante' 
+	if request.method == 'POST':        
+	    formulario = lugaresCercanos(request.POST)
+	    if formulario.is_valid:
+	        direccion = request.POST['direccion']
+	        poblacion = request.POST['poblacion']
+	        direccion = direccion + ',' + poblacion
+	        print direccion
+	        radio = request.POST['radio_distancia']
+	        #utilizamos la libreria de google maps
+	        lat, lng = gmaps.address_to_latlng(direccion)
+	        lat = str(lat)
+	        lng = str(lng)
+	        print lat
+	        print lng
+	        lugares = 'https://maps.googleapis.com/maps/api/place/search/xml?location=' + lat + ',' + lng + '&radius=' + radio + '&types=' + lugar + '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+	        print lugares
+	        xmldoc = minidom.parse(urllib.urlopen(lugares))
+	        local = [] 
+	        for item in xmldoc.getElementsByTagName("result"): 
+	            for item in item.getElementsByTagName('name'):                                
+	                local.append(item.firstChild.data)                                           
+	    return render_to_response('alttapa.html', {'local':local}, context_instance=RequestContext(request))
+	else:
+	    formulario = lugaresCercanos()
+	    return render_to_response('direccion.html', {'formulario':formulario}, context_instance=RequestContext(request))
 
 #https://maps.googleapis.com/maps/api/place/search/xml?location=39.16276,-3.028257&radius=1000&types=bar&sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A

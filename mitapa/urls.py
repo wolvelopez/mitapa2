@@ -31,5 +31,6 @@ urlpatterns = patterns('',
     url(r'^lugares/$','principal.views.localizarlugares'),
     url(r'^obtenerposicion/$', 'principal.views.obtenerPosicion'),
     url(r'^lugarnuevo/$', 'principal.views.lugarnuevo'),
-    url(r'^obtpos/$', 'principal.views.obtpos'),        
+    url(r'^obtpos/$', 'principal.views.obtpos'),
+    url(r'^Nueva_tapa/$', 'principal.views.nuevaTapaPosicion')        
 )
