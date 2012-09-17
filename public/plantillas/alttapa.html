@@ -4,15 +4,15 @@
 {% endblock %}
 
 {% block contenido %}
-	<h1>Lugares Cercanos</h1>
-	<div id="lugarescercanos">
-		{% for item in local %}
-			<div id="lugarescercanos2">				
-				<p>{{ item }}</p>
-				<p><a href='{% url principal.views.comentar_tapa item.id %}'>Coméntala</a></p>					
-			</div>
-		{% empty %}
-			<p>No hay lugares cercanos.</p>
-		{% endfor %}		
-	</div>	
+        <h1>Lugares Cercanos</h1>
+    <div id="lugarescercanos">
+        {% for item in local %}
+            <div id="lugarescercanos2">
+                <p>{{ item }}</p>
+                <p><a href='{% url principal.views.comentar_tapa item.id %}'>Coméntala</a></p>
+            </div>
+        {% empty %}
+            <p>No hay lugares cercanos.</p>
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>{%block titulo%}{% endblock %}</title>
-	<link rel="stylesheet" href="{{STATIC_URL}}css/estilo.css">
-	<link rel="shortcut icon" href="{{STATIC_URL}}img/icono.png">
-	{% block estilo %}{% endblock %}
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>{%block titulo%}{% endblock %}</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/estilo.css">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/icono.png">
+    {% block estilo %}{% endblock %}
 </head>
 <body>
-	<header>
-		<nav id="menu_navegacion">
-			<ul>
-				<li><a href="/"><img src="{{STATIC_URL}}img/mitapa.gif"></a></li>
-				<li><a href="/ingresar">Login</a></li>
-				<li><a href="/usuario/nuevo">Date de alta</a></li>				
-				<li><a href="/tapas">Tapas</a></li>				
-				<li><a href="/altatapa">Añade una Tapa</a></li>
-				<li><a href="/lugarnuevo">Añade un Lugar</a></li>
-				<li><a href="/obtpos">Lugares cercanos</a></li>
-				<li><a href="/Nueva_tapa">Nueva Tapa</a></li>
-				<li><a href="/cerrar">Salir</a></li>
-			</ul>
-		</nav>
-	</header>
-	<div id="contenedor">
-		<section class="contenido">	
-			<article>
-				{% block contenido %}
-				{% endblock %}
-				{% block comentarios %}
-				{% endblock %}
-			</article>
-			<article>
-				{% block aleatorias %}
-				{% endblock %}
-			</article>
-		</section>		
-		<footer class="contenido">			
-			<p>     MiTapa 2012 - CopyLeft     </p>
-		</footer>
-	</div>
+    <header>
+        <nav id="menu_navegacion">
+            <ul>
+                <li><a href="/"><img src="{{STATIC_URL}}img/mitapa.gif"></a></li>
+                <li><a href="/ingresar">Login</a></li>
+                <li><a href="/usuario/nuevo">Date de alta</a></li>
+                <li><a href="/tapas">Tapas</a></li>
+                <li><a href="/altatapa">Añade una Tapa</a></li>
+                <li><a href="/lugarnuevo">Añade un Lugar</a></li>
+                <li><a href="/obtpos">Lugares cercanos</a></li>
+                <li><a href="/Nueva_tapa">Nueva Tapa</a></li>
+                <li><a href="/cerrar">Salir</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="contenedor">
+        <section class="contenido">
+            <article>
+                {% block contenido %}
+                {% endblock %}
+                {% block comentarios %}
+                {% endblock %}
+            </article>
+            <article>
+                {% block aleatorias %}
+                {% endblock %}
+            </article>
+        </section>
+        <footer class="contenido">
+            <p>     MiTapa 2012 - CopyLeft     </p>
+        </footer>
+    </div>
 </body>
 </html>
