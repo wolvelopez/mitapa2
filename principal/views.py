@@ -309,8 +309,17 @@ def selecciondeLocal(request, referencia):
     for item in xmldoc.getElementsByTagName("result"):
         for item in xmldoc.getElementsByTagName("name"):
             local = item.firstChild.data
+        for item in xmldoc.getElementsByTagName("vicinity"):
+            direccion = item.firstChild.data
+        for item in xmldoc.getElementsByTagName("url"):
+            url = item.firstChild.data
+        for item in xmldoc.getElementsByTagName("formatted_phone_number"):
+            telefono = item.firstChild.data
+
+
     return render_to_response('lugarescercanos.html',
-        {'local': local}, context_instance=RequestContext(request))
+        {'local': local, 'direccion': direccion, 'url': url,
+        'telefono': telefono}, context_instance=RequestContext(request))
 
 
 
