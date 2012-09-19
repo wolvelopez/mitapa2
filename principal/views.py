@@ -299,9 +299,18 @@ def nuevaTapaPosicion(request):
 
 
 def selecciondeLocal(request, referencia):
-    print "referencia"
+    lugar = \
+        'https://maps.googleapis.com/maps/api/place/details/xml?reference=' \
+        + referencia + \
+        '&sensor=true&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+    print lugar
+    xmldoc = minidom.parse(urllib.urlopen(lugar))
+    local = []
+    for item in xmldoc.getElementsByTagName("result"):
+        for item in xmldoc.getElementsByTagName("name"):
+            local = item.firstChild.data
     return render_to_response('lugarescercanos.html',
-        {'referencia': referencia}, context_instance=RequestContext(request))
+        {'local': local}, context_instance=RequestContext(request))
 
 
 

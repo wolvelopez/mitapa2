@@ -14,7 +14,7 @@
                 <p>{{item.lugar}}</p>
                 <p><img src='{{MEDIA_URL}}{{item.imagen}}'></p>
                 <p>{{item.usuario}}</p>
-                <p><a href='{% url principal.views.comentar_tapa item.id %}'>Coméntala</a></p>
+                <p><a href='{% url principal.views.comentar_tapa item.id %}'>Añadir Tapa</a></p>
             </div>
         {% empty %}
             <p>No hay tapas registradas aun.</p>

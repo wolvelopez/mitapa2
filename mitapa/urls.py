@@ -33,6 +33,6 @@ urlpatterns = patterns('',
     url(r'^lugarnuevo/$', 'principal.views.lugarnuevo'),
     url(r'^obtpos/$', 'principal.views.obtpos'),
     url(r'^Nueva_tapa/$', 'principal.views.nuevaTapaPosicion'),
-    url(r'^selecciondeLocal/(?<referencia>\d+)$',
+    url(r'^selecciondeLocal/(?P<referencia>\S+)/$',
          'principal.views.selecciondeLocal'),
 )
