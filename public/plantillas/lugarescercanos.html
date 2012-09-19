@@ -9,10 +9,11 @@
         {% for item in datos %}
             <div id="lugarescercanos2">
                 <p>{{ item.local }}</p>
-                <p><a href='{% url principal.views.selecciondeLocal item.ref %}'>Añadir Tapa</a></p>
+                <p><a href="{% url 'principal.views.selecciondeLocal' item.ref %}">Añadir Tapa</a></p>
             </div>
         {% empty %}
             <p>No hay lugares cercanos.</p>
         {% endfor %}
+        Referencia: {{ referencia }}
     </div>
 {% endblock %}

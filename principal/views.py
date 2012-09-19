@@ -244,7 +244,6 @@ def obtpos(request):
             for item in xmldoc.getElementsByTagName("result"):
                 for item in item.getElementsByTagName('name'):
                     local.append(item.firstChild.data)
-                    print "entra al local.append"
                     print item.firstChild.data
                 for item in xmldoc.getElementsByTagName("reference"):
                     ref.append(item.firstChild.data)
@@ -299,8 +298,10 @@ def nuevaTapaPosicion(request):
         context_instance=RequestContext(request))
 
 
-def selecciondeLocal(referencia):
+def selecciondeLocal(request, referencia):
     print "referencia"
+    return render_to_response('lugarescercanos.html',
+        {'referencia': referencia}, context_instance=RequestContext(request))
 
 
 
