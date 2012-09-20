@@ -1,16 +1,16 @@
 {% extends 'index.html' %}
 
 {% block titulo %}
-	Busqueda de Lugares
+    Busqueda de Lugares
 {% endblock %}
 
 {% block encabezado %}
-	<h1>Buscar lugares</h1>	
+    <h1>Buscar lugares</h1>
 {% endblock %}
 
 {% block contenido %}
-	<form id="formulario" method="POST" action="">{% csrf_token %}
-		<table>{{formulario}}</table>
-		<p><input type="submit" value="Ingresar"></p>
-	</form>
+    <form id="formulario" method="POST" action="">{% csrf_token %}
+        <table>{{formulario}}</table>
+        <p><input type="submit" value="Ingresar"></p>
+    </form>
 {% endblock%}

@@ -49,6 +49,7 @@ class LugarNuevo(forms.Form):
 class lugaresCercanos(forms.Form):
     direccion = forms.CharField(label="Direccion", required=True)
     poblacion = forms.CharField(label="Poblacion", required=True)
-    radio_distancia = forms.CharField(label="Radio", required=True)
+    radio_distancia = forms.CharField(label="Metros(0-5000)",
+         required=True)
 
 

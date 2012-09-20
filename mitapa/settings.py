@@ -6,7 +6,7 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (    
+ADMINS = (
     ('Andres', 'wolvelopez@gmail.com'),
 )
 
@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'south',
     'principal',
 )
 

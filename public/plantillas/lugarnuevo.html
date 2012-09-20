@@ -1,54 +1,54 @@
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>{%block titulo%}{% endblock %}</title>
-	<link rel="stylesheet" href="{{STATIC_URL}}css/estilo.css">
-	<link rel="shortcut icon" href="{{STATIC_URL}}img/icono.png">
-	{% block estilo %}{% endblock %}
-	<script type="text/javascript">
-		window.onload = obtenerUbicacion;
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>{%block titulo%}{% endblock %}</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/estilo.css">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/icono.png">
+    {% block estilo %}{% endblock %}
+    <script type="text/javascript">
+        window.onload = obtenerUbicacion;
 
-		function obtenerUbicacion() {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(mostrarUbicacion);
-			} else {
-				alert("Error! El navegador no soporta Geolocalizacion.");
-			}
-		}
+        function obtenerUbicacion() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+            } else {
+                alert("Error! El navegador no soporta Geolocalizacion.");
+            }
+        }
 
-		function mostrarUbicacion(position) {
-			var latitud = position.coords.latitude;
-			var longitud = position.coords.longitude;
-			
-			document.forms['formulario']['latitud'].value = latitud;
-			document.forms['formulario']['longitud'].value = longitud;
-		}
-	</script>
+        function mostrarUbicacion(position) {
+            var latitud = position.coords.latitude;
+            var longitud = position.coords.longitude;
+
+            document.forms['formulario']['latitud'].value = latitud;
+            document.forms['formulario']['longitud'].value = longitud;
+        }
+    </script>
 </head>
 <body>
 <header>
-		<nav id="menu_navegacion">
-			<ul>
-				<li><a href="/"><img src="{{STATIC_URL}}img/mitapa.gif"></a></li>
-				<li><a href="/ingresar">Login</a></li>
-				<li><a href="/usuario/nuevo">Date de alta</a></li>				
-				<li><a href="/tapas">Tapas</a></li>				
-				<li><a href="/altatapa">Añade una Tapa</a></li>
-				<li><a href="/lugarnuevo">Añade un Lugar</a></li>
-				<li><a href="/obtpos">Lugares cercanos</a></li>
-				<li><a href="/cerrar">Salir</a></li>
-			</ul>
-		</nav>
-	</header>
+        <nav id="menu_navegacion">
+            <ul>
+                <li><a href="/"><img src="{{STATIC_URL}}img/mitapa.gif"></a></li>
+                <li><a href="/ingresar">Login</a></li>
+                <li><a href="/usuario/nuevo">Date de alta</a></li>
+                <li><a href="/tapas">Tapas</a></li>
+                <li><a href="/altatapa">Añade una Tapa</a></li>
+                <li><a href="/lugarnuevo">Añade un Lugar</a></li>
+                <li><a href="/obtpos">Lugares cercanos</a></li>
+                <li><a href="/cerrar">Salir</a></li>
+            </ul>
+        </nav>
+    </header>
 
 {% block contenido %}
-	<h1>Añade un nuevo lugar</h1>
-	
-	<form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}		
-		{{formulario.as_p}}		
-		<p><input type="submit" value="Confirmar"></p>
-	</form>		
+    <h1>Añade un nuevo lugar</h1>
+
+    <form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+        {{formulario.as_p}}
+        <p><input type="submit" value="Confirmar"></p>
+    </form>
 {% endblock %}
 </body>
 </html>
