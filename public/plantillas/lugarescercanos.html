@@ -14,11 +14,16 @@
         {% empty %}
             <p>No hay lugares cercanos.</p>
         {% endfor %}
-        {% if local %}
-            <p>Local: {{ local }}</p>
-            <p>Direccion: {{ direccion }}</p>
-            <p>Teléfono: {{ telefono }}</p>
-            <p>Pag. Web: <a href='{{ url }}'>{{ url }}</a></p>
-        {% endif %}
+        <div id="lugareselegido">
+            {% if local %}
+                <p>Local: {{ local }}</p>
+                <p>Direccion: {{ direccion }}</p>
+                <p>Teléfono: {{ telefono }}</p>
+                <p>Pag. Web: <a href='{{ url }}'>Web</a></p>
+                <form action="" method="POST">
+                <input type="submit" value="Añadir Tapa" />
+                </form>
+            {% endif %}
+        </divZ
     </div>
 {% endblock %}

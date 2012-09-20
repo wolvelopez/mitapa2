@@ -315,8 +315,6 @@ def selecciondeLocal(request, referencia):
             url = item.firstChild.data
         for item in xmldoc.getElementsByTagName("formatted_phone_number"):
             telefono = item.firstChild.data
-
-
     return render_to_response('lugarescercanos.html',
         {'local': local, 'direccion': direccion, 'url': url,
         'telefono': telefono}, context_instance=RequestContext(request))
