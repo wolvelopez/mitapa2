@@ -199,12 +199,18 @@ def lugarnuevo(request):
                 "<type>" + "bar" + "</type>" + \
                 "<language>" + "es" + "</language>" + \
                 "</PlaceAddRequest>"
-            print xml
-            #utilizamos request, una libreria mas optimizada que urllib2
-            r = requests.post('https://maps.googleapis.com/maps/api/place/ \
-            add/xml?sensor=false&key= \
-            AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A', xml)
-            print r.content
+            #print xml
+            ##utilizamos request, una libreria mas optimizada que urllib2
+            #r = requests.post('https://maps.googleapis.com/maps/api/place/ \
+            #add/xml?sensor=false&key= \
+            #AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A', xml)
+            #print r.content
+            url = 'https://maps.googleapis.com/maps/api/place/add/xml?sensor=false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A'
+            req = urllib2.Request(url,
+                xml,
+                headers={'Content-Type': 'application/xml'})
+            consulta = urllib2.urlopen(req)
+            print consulta.read()
     else:
         formulario = LugarNuevo()
     return render_to_response('lugarnuevo.html', {'formulario': formulario},

@@ -4,6 +4,8 @@ from django import forms
 from principal.models import Lugar, Tapa, Comentario
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms.fields import DateField, ChoiceField, MultipleChoiceField
+from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
 
 
 
@@ -36,14 +38,22 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ("firstname", "lastname", "email", "username", )
 
+#Valores posibles a elegir de un lugar nuevo
+tipos = (
+    ('1', 'bar'),
+    ('2', 'cafeteria'),
+    ('3', 'comida'),
+    ('4', 'restaurante'))
+
 
 class LugarNuevo(forms.Form):
-    latitud = forms.CharField(label="Latitud")
-    longitud = forms.CharField(label="Longitud")
-    precision = forms.CharField(label="Precision")
+    latitud = forms.CharField(label="Latitud", required=False)
+    longitud = forms.CharField(label="Longitud", required=False)
+    precision = forms.CharField(label="Precision", required=False)
     nombre = forms.CharField(label="Nombre")
-    tipo = forms.CharField(label="Tipo")
-    lenguaje = forms.CharField(label="lenguaje")
+    tipo = forms.MultipleChoiceField(required=False,
+        widget=CheckboxSelectMultiple, choices=tipos)
+    lenguaje = forms.CharField(label="lenguaje", required=False)
 
 
 class lugaresCercanos(forms.Form):
