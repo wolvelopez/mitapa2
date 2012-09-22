@@ -5,7 +5,7 @@ from principal.models import Lugar, Tapa, Comentario
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms.fields import DateField, ChoiceField, MultipleChoiceField
-from django.forms.widgets import RadioSelect, CheckboxSelectMultiple
+from django.forms.widgets import RadioSelect, CheckboxSelectMultiple, Select
 
 
 
@@ -52,7 +52,7 @@ class LugarNuevo(forms.Form):
     precision = forms.CharField(label="Precision", required=False)
     nombre = forms.CharField(label="Nombre")
     tipo = forms.MultipleChoiceField(required=False,
-        widget=CheckboxSelectMultiple, choices=tipos)
+        widget=Select, choices=tipos)
     lenguaje = forms.CharField(label="lenguaje", required=False)
 
 
