@@ -190,13 +190,36 @@ def lugarnuevo(request):
     if request.method == 'POST':
         formulario = LugarNuevo(request.POST)
         if formulario.is_valid():
+            #Obtencion de valores del formulario para generar el XML
+            direccion = formulario.cleaned_data['direccion']
+            print direccion
+            poblacion = formulario.cleaned_data['poblacion']
+            print poblacion
+            nombre = formulario.cleaned_data['nombre']
+            print nombre
+            tipo = formulario.cleaned_data['tipo']
+            print tipo
+            gmaps = GoogleMaps('AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A')
+            direccion = direccion + ',' + poblacion
+            lat, lng = gmaps.address_to_latlng(direccion)
+            lat = str(lat)
+            lng = str(lng)
+            if tipo == '1':
+                tipo = 'bar'
+            elif tipo == '2':
+                tipo = 'cafeteria'
+            elif tipo == '3':
+                tipo = 'comida'
+            elif tipo == '4':
+                tipo = 'restaurante'
+            print tipo
             xml = "<PlaceAddRequest>" + "<location>" + "<lat>" + \
-                request.POST['latitud'] + \
-                "</lat>" + "<lng>" + request.POST['longitud'] + "</lng>" + \
+                lat + \
+                "</lat>" + "<lng>" + lng + "</lng>" + \
                 "</location>" + \
                 "<accuracy>" + "5" + "</accuracy>" + \
-                "<name>" + request.POST['nombre'] + "</name>" + \
-                "<type>" + "bar" + "</type>" + \
+                "<name>" + nombre + "</name>" + \
+                "<type>" + tipo + "</type>" + \
                 "<language>" + "es" + "</language>" + \
                 "</PlaceAddRequest>"
             #print xml
@@ -305,6 +328,11 @@ def nuevaTapaPosicion(request):
 
 
 def selecciondeLocal(request, referencia):
+    #direccion  url y telefonodesconocida en caso de que falle la
+    #API de google Maps
+    direccion = ""
+    url=""
+    telefono=""
     lugar = \
         'https://maps.googleapis.com/maps/api/place/details/xml?reference=' \
         + referencia + \

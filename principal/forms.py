@@ -8,7 +8,6 @@ from django.forms.fields import DateField, ChoiceField, MultipleChoiceField
 from django.forms.widgets import RadioSelect, CheckboxSelectMultiple, Select
 
 
-
 class AltaTapaForm(ModelForm):
     class Meta:
         model = Tapa
@@ -47,11 +46,10 @@ tipos = (
 
 
 class LugarNuevo(forms.Form):
-    latitud = forms.CharField(label="Latitud", required=False)
-    longitud = forms.CharField(label="Longitud", required=False)
-    precision = forms.CharField(label="Precision", required=False)
+    direccion = forms.CharField(label="Direccion", required=False)
+    poblacion = forms.CharField(label="Poblacion", required=False)
     nombre = forms.CharField(label="Nombre")
-    tipo = forms.MultipleChoiceField(required=False,
+    tipo = forms.ChoiceField(required=False,
         widget=Select, choices=tipos)
     lenguaje = forms.CharField(label="lenguaje", required=False)
 
