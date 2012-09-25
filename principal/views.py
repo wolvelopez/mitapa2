@@ -328,11 +328,11 @@ def nuevaTapaPosicion(request):
 
 
 def selecciondeLocal(request, referencia):
-    #direccion  url y telefonodesconocida en caso de que falle la
+    #direccion  url y telefono desconocida en caso de que falle la
     #API de google Maps
     direccion = ""
-    url=""
-    telefono=""
+    url = ""
+    telefono = ""
     lugar = \
         'https://maps.googleapis.com/maps/api/place/details/xml?reference=' \
         + referencia + \
