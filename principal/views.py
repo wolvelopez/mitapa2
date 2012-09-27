@@ -352,18 +352,23 @@ def selecciondeLocal(request, referencia):
             telefono = item.firstChild.data
     return render_to_response('lugarescercanos.html',
         {'local': local, 'direccion': direccion, 'url': url,
-        'telefono': telefono}, context_instance=RequestContext(request))
+        'telefono': telefono, 'referencia': referencia},
+        context_instance=RequestContext(request))
 
 
-def addTapa(request, referencia):
+def addTapa(request, referencia, nombre):
+    print referencia
+    print nombre
     if request.method == 'POST':
         formulario = request.addTapaForm(request.POST)
         if formulario.is_valid():
             return render_to_response('altatapa.html',
-                context_instance=RequestContext(request))
+            {'formulario': formulario},
+            context_instance=RequestContext(request))
     else:
         formulario = addTapaForm()
-        print formulario
+        print referencia
+        print nombre
         return render_to_response('altatapa.html', {'formulario': formulario},
             context_instance=RequestContext(request))
 
@@ -376,4 +381,3 @@ def addTapa(request, referencia):
 #false&key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #key=AIzaSyCNUf4Y4LBWWkQAYSvJmQCriCzNmEJkD0A
 #*****************************************************************************
-

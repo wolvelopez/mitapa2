@@ -67,5 +67,5 @@ class addTapaForm(forms.Form):
     referencia = forms.CharField(label="referencia")
     nombreTapa = forms.CharField(label="Nombre de la Tapa")
     lugar = forms.CharField(label="ID Lugar")
-    #imagen = forms.ImageField(upload_to='tapas', verbose_name='tapas')
+    imagen = forms.ImageField(label="Imagen")
     usuario = forms.CharField(label="Usuario")
