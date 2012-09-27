@@ -3,9 +3,9 @@
 {% block estilo %}{% endblock %}
 
 {% block contenido %}
-	<form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
-		{{formulario.as_p}}		
-		<p><input type="submit" value="Confirmar"></p>
-	</form>
+    <form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+        {{formulario.as_p}}
+        <p><input type="submit" value="Confirmar"></p>
+    </form>
 {% endblock %}
 

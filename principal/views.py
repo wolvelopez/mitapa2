@@ -4,7 +4,8 @@ from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, get_object_or_404
-from principal.forms import AltaTapaForm, AltaComentarioForm, AltaLugarForm, RegisterForm, LugarNuevo, lugaresCercanos
+from principal.forms import AltaTapaForm, AltaComentarioForm, RegisterForm, \
+    LugarNuevo, lugaresCercanos, addTapaForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -353,6 +354,18 @@ def selecciondeLocal(request, referencia):
         {'local': local, 'direccion': direccion, 'url': url,
         'telefono': telefono}, context_instance=RequestContext(request))
 
+
+def addTapa(request, referencia):
+    if request.method == 'POST':
+        formulario = request.addTapaForm(request.POST)
+        if formulario.is_valid():
+            return render_to_response('altatapa.html',
+                context_instance=RequestContext(request))
+    else:
+        formulario = addTapaForm()
+        print formulario
+        return render_to_response('altatapa.html', {'formulario': formulario},
+            context_instance=RequestContext(request))
 
 
 

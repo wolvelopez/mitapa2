@@ -20,7 +20,6 @@ class Tapa(models.Model):
     lugar = models.ForeignKey(Lugar)
     imagen = models.ImageField(upload_to='tapas', verbose_name='tapas')
     usuario = models.ForeignKey(User)
-    #referencia = models.ForeignKey(Lugar)
 
     def __unicode__(self):
         return self.nombre

@@ -61,3 +61,11 @@ class lugaresCercanos(forms.Form):
          required=True)
 
 
+class addTapaForm(forms.Form):
+    nombreLugar = forms.CharField(label="Lugar")
+    direccion = forms.CharField(label="Direccion")
+    referencia = forms.CharField(label="referencia")
+    nombreTapa = forms.CharField(label="Nombre de la Tapa")
+    lugar = forms.CharField(label="ID Lugar")
+    #imagen = forms.ImageField(upload_to='tapas', verbose_name='tapas')
+    usuario = forms.CharField(label="Usuario")
