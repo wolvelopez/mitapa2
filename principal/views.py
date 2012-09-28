@@ -356,20 +356,23 @@ def selecciondeLocal(request, referencia):
         context_instance=RequestContext(request))
 
 
-def addTapa(request, referencia, nombre):
+def addTapa(request, referencia, local):
     print referencia
-    print nombre
+    print local
     if request.method == 'POST':
         formulario = request.addTapaForm(request.POST)
         if formulario.is_valid():
-            return render_to_response('lugarescercanos.html',
-            {'formulario': formulario},
+            return render_to_response('altatapa.html',
+            {'formulario': formulario,
+            'referencia': referencia, 'local': local},
             context_instance=RequestContext(request))
     else:
         formulario = addTapaForm()
         print "Referencia:" + referencia
-        print "Nombre:" + nombre
-        return render_to_response('lugarescercanos.html', {'formulario': formulario},
+        print "Nombre:" + local
+        return render_to_response('altatapa.html',
+            {'formulario': formulario,
+            'referencia': referencia, 'local': local},
             context_instance=RequestContext(request))
 
 

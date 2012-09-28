@@ -29,11 +29,7 @@
             {% else %}
                 <p>Pag. Web: No hay web asociada</a></p>
             {% endif %}
-            <a href='{% url principal.views.addTapa referencia="refenciadeLocal" local="NombredeLocal" %}'>Añadir Tapa</a>
+            <a href='{% url principal.views.addTapa referencia=referencia local=local %}'>Añadir Tapa</a>
         {% endif %}
     </div>
-    <form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
-        {{formulario.as_p}}
-        <p><input type="submit" value="Confirmar"></p>
-    </form>
 {% endblock %}

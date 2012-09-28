@@ -4,17 +4,8 @@
 
 {% block contenido %}
     <div id="lugareselegido">
-        {% if local %}
-            <p>Local: {{ local }}</p>
-            <p>Direccion: {{ direccion }}</p>
-            <p>Teléfono: {{ telefono }}</p>
-            {% if url != '' %}
-                <p>Pag. Web: <a href='{{ url }}'>Web</a></p>
-            {% else %}
-                <p>Pag. Web: No hay web asociada</a></p>
-            {% endif %}
-
-        {% endif %}
+        <p>Referencia: {{ referencia }}</p>
+        <p>Local: {{ local }}</p>
     </div>
     <form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
         {{formulario.as_p}}
