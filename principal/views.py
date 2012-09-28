@@ -362,14 +362,14 @@ def addTapa(request, referencia, nombre):
     if request.method == 'POST':
         formulario = request.addTapaForm(request.POST)
         if formulario.is_valid():
-            return render_to_response('altatapa.html',
+            return render_to_response('lugarescercanos.html',
             {'formulario': formulario},
             context_instance=RequestContext(request))
     else:
         formulario = addTapaForm()
-        print referencia
-        print nombre
-        return render_to_response('altatapa.html', {'formulario': formulario},
+        print "Referencia:" + referencia
+        print "Nombre:" + nombre
+        return render_to_response('lugarescercanos.html', {'formulario': formulario},
             context_instance=RequestContext(request))
 
 

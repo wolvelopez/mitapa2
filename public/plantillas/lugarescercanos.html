@@ -18,18 +18,22 @@
         {% empty %}
             <p>No hay lugares cercanos.</p>
         {% endfor %}
-        <div id="lugareselegido">
-            {% if local %}
-                <p>Local: {{ local }}</p>
-                <p>Direccion: {{ direccion }}</p>
-                <p>Teléfono: {{ telefono }}</p>
-                {% if url != '' %}
-                    <p>Pag. Web: <a href='{{ url }}'>Web</a></p>
-                {% else %}
-                    <p>Pag. Web: No hay web asociada</a></p>
-                {% endif %}
-                <a href='{% url principal.views.addTapa referencia local %}'>Añadir Tapa</a>
-            {% endif %}
-        </div>
     </div>
+    <div id="lugareselegido">
+        {% if local %}
+            <p>Local: {{ local }}</p>
+            <p>Direccion: {{ direccion }}</p>
+            <p>Teléfono: {{ telefono }}</p>
+            {% if url != '' %}
+                <p>Pag. Web: <a href='{{ url }}'>Web</a></p>
+            {% else %}
+                <p>Pag. Web: No hay web asociada</a></p>
+            {% endif %}
+            <a href='{% url principal.views.addTapa referencia="refenciadeLocal" local="NombredeLocal" %}'>Añadir Tapa</a>
+        {% endif %}
+    </div>
+    <form id="formulario" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+        {{formulario.as_p}}
+        <p><input type="submit" value="Confirmar"></p>
+    </form>
 {% endblock %}
