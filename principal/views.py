@@ -360,8 +360,9 @@ def addTapa(request, referencia, local):
     print referencia
     print local
     if request.method == 'POST':
-        formulario = request.addTapaForm(request.POST)
+        formulario = request.addTapaForm(request.POST, request.FILES)
         if formulario.is_valid():
+            print "ENTRA AL FORMULARIOOOOOOOOOOOOOOOO"
             return render_to_response('altatapa.html',
             {'formulario': formulario,
             'referencia': referencia, 'local': local},
