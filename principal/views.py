@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, get_object_or_404
 from principal.forms import AltaTapaForm, AltaComentarioForm, RegisterForm, \
-    LugarNuevo, lugaresCercanos, addTapaForm
+    LugarNuevo, lugaresCercanos, addTapaForm, AltaLugarForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -360,14 +360,32 @@ def addTapa(request, referencia, local):
     print referencia
     print local
     if request.method == 'POST':
-        formulario = request.addTapaForm(request.POST)
+        print "ENTRA AL REQUEST METHOD"
+        formulario = addTapaForm(request.POST)
         if formulario.is_valid():
+            print "EL FORMULQARIO ES VALIDO"
+            #creamos el objeto del modelo Tapa
+            lugar = AltaLugarForm()
+            lugar.nombre = request.POST.cleaned_data['nombreLugar']
+            lugar.direccion = request.POST.cleaned_data['direccion']
+            lugar.referencia = request.POST.cleaned_data['referencia']
+            #comprobamos si existe el lugar de antemano y si existe
+            #capturamos su id para agregar una nueva Tapa, y sino existe
+            #lo creamos
+            #Si no existe lo damos de alta
+            if not lugar.objects.get(referencia=referencia):
+                lugar.save()
+            #procedamos a dar de alta la tapa
+
             return render_to_response('altatapa.html',
             {'formulario': formulario,
             'referencia': referencia, 'local': local},
             context_instance=RequestContext(request))
+        else:
+            return HttpResponseRedirect('/obtpos')
     else:
-        formulario = addTapaForm()
+        formulario = addTapaForm(initial={'referencia': referencia,
+            'nombreLugar': local})
         print "Referencia:" + referencia
         print "Nombre:" + local
         return render_to_response('altatapa.html',
