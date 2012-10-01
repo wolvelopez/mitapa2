@@ -376,11 +376,6 @@ def addTapa(request, referencia, local):
             if not lugar.objects.get(referencia=referencia):
                 lugar.save()
             #procedamos a dar de alta la tapa
-
-            return render_to_response('altatapa.html',
-            {'formulario': formulario,
-            'referencia': referencia, 'local': local},
-            context_instance=RequestContext(request))
         else:
             return HttpResponseRedirect('/obtpos')
     else:
