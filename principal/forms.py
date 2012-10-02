@@ -61,6 +61,6 @@ class lugaresCercanos(forms.Form):
          required=True)
 
 
-class addTapaForm(ModelForm):
+class addTapaForm(forms.Form):
     nombreTapa = forms.CharField(label="Nombre de la Tapa")
     imagen = forms.ImageField(label="Imagen")

@@ -361,14 +361,14 @@ def addTapa(request, referencia, local):
     print local
     if request.method == 'POST':
         print "ENTRA AL REQUEST METHOD"
-        formulario = addTapaForm(request.POST)
+        formulario = addTapaForm(request.POST, request.FILES)
         if formulario.is_valid():
-            print "EL FORMULQARIO ES VALIDO"
+            print "EL FORMULARIO ES VALIDO"
             #creamos el objeto del modelo Tapa
             lugar = AltaLugarForm()
-            lugar.nombre = request.POST.cleaned_data['nombreLugar']
-            lugar.direccion = request.POST.cleaned_data['direccion']
-            lugar.referencia = request.POST.cleaned_data['referencia']
+            print "HASTA AQUI BIEN........"
+            lugar.nombre = local
+            lugar.referencia = referencia
             #comprobamos si existe el lugar de antemano y si existe
             #capturamos su id para agregar una nueva Tapa, y sino existe
             #lo creamos
