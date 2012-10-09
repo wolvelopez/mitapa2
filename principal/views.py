@@ -20,6 +20,7 @@ import random
 from googlemaps import GoogleMaps
 import sys
 
+
 #Añadimos al path de python lo modulos que se encuentran en la carpeta modules\
 #de alwaysdata para mas informacion mirar en:
 #http://wiki.alwaysdata.com/wiki/Instalar_un_m%C3%B3dulo_en_Python_(Es)
@@ -356,31 +357,44 @@ def selecciondeLocal(request, referencia):
         context_instance=RequestContext(request))
 
 
-def addTapa(request, referencia, local):
+def addTapa(request, referencia, local, direccion):
     print referencia
     print local
     if request.method == 'POST':
-        print "ENTRA AL REQUEST METHOD"
         formulario = addTapaForm(request.POST, request.FILES)
         if formulario.is_valid():
-            print "EL FORMULARIO ES VALIDO"
             #creamos el objeto del modelo Tapa
-            lugar = AltaLugarForm()
-            print "HASTA AQUI BIEN........"
+            lugar = Lugar()
             lugar.nombre = local
+            lugar.direccion = direccion
             lugar.referencia = referencia
             #comprobamos si existe el lugar de antemano y si existe
             #capturamos su id para agregar una nueva Tapa, y sino existe
             #lo creamos
             #Si no existe lo damos de alta
-            if not lugar.objects.get(referencia=referencia):
+            print "REFERENCIA: " + referencia
+            #comprobemos si existe el lugar, y en el caso de que no exista
+            #lo damos de alta en nuestra bbdd
+            existeLugar = Lugar.objects.filter(referencia=referencia)            
+            if not existeLugar:
+                print "no existe el lugar....."
+                #demos de alta el lugar
                 lugar.save()
-            #procedamos a dar de alta la tapa
+            #procedamos a dar de alta la tapa            
+            tapa = Tapa()
+            tapa.imagen = request.FILES['imagen']
+            tapa.nombre = request.POST['nombreTapa']            
+            tapa.lugar = lugar          
+            tapa.usuario = request.user
+            tapa.save()            
+            return HttpResponseRedirect('/')
         else:
             return HttpResponseRedirect('/obtpos')
     else:
         formulario = addTapaForm(initial={'referencia': referencia,
             'nombreLugar': local})
+        if local == "":
+            local = "No existe el nombre del local"
         print "Referencia:" + referencia
         print "Nombre:" + local
         return render_to_response('altatapa.html',

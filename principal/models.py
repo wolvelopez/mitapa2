@@ -9,7 +9,7 @@ class Lugar(models.Model):
     nombre = models.CharField(max_length=100)
     direccion = models.CharField(max_length=200)
     #referencia de la API de google places
-    referencia = models.CharField(max_length=200)
+    referencia = models.CharField(max_length=500)
 
     def __unicode__(self):
         return self.nombre

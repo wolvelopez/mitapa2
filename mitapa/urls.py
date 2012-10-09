@@ -35,6 +35,6 @@ urlpatterns = patterns('',
     url(r'^Nueva_tapa/$', 'principal.views.nuevaTapaPosicion'),
     url(r'^selecciondeLocal/(?P<referencia>\S+)/$',
          'principal.views.selecciondeLocal'),
-    url(r'^addTapa/(?P<referencia>\S+)/(?P<local>\D+)/$',
+    url(r'^addTapa/(?P<referencia>\S+)/(?P<local>\D+)/(?P<direccion>.*)/$',
         'principal.views.addTapa'),
 )
